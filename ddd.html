@@ -1,0 +1,439 @@
+<!DOCTYPE HTML>
+<!--
+	Landed by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+    <title>Registro de Proveedores</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	  <style>
+        body {
+            font-family: "Roboto", sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: linear-gradient(90deg, #a3d7e8 0%, #dbeeff 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+        }
+        .tab-link {
+            background-color: #0056b3;
+            color: white;
+            padding: 14px 16px;
+            margin: 0;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease;
+        }
+        .tab-link:hover {
+            background-color: #003f7d;
+        }
+        .tab-link.active {
+            background-color: #003f7d;
+        }
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .tab-content h2 {
+            margin-top: 0;
+        }
+        .tab-content label {
+            display: block;
+            margin-bottom: 8px;
+        }
+        .tab-content input, 
+        .tab-content button, 
+        .tab-content textarea, 
+        .tab-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .tab-content button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab-content button:hover,
+        .tab-content button:active,
+        .tab-content button:focus {
+            background-color: #003f7d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+<body class="is-preload landing">
+        <div id="page-wrapper">
+        
+<!-- Header -->
+                <header id="header">
+                    <h1 id="logo"><a href="index.html">Landed</a></h1>
+                    <nav id="nav">
+                        <ul>
+                            <li><a href="form.html">Home</a></li>
+                            <li>
+                                <a href="form.html">Registro</a>
+                        <!--        <ul>
+                                    <li><a href="left-sidebar.html">Left Sidebar</a></li>
+                                    <li><a href="right-sidebar.html">Right Sidebar</a></li>
+                                    <li><a href="no-sidebar.html">No Sidebar</a></li>
+                                    <li>
+                                        <a href="#">Submenu</a>
+                                        <ul>
+                                            <li><a href="#">Option 1</a></li>
+                                            <li><a href="#">Option 2</a></li>
+                                            <li><a href="#">Option 3</a></li>
+                                            <li><a href="#">Option 4</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>-->
+                            </li>
+                            <li><a href="elements.html">Elements</a></li>
+                            <li><a href="#" class="button primary">Sign Up</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            </div>
+
+    <div class="tabs">
+        <button class="tab-link active" onclick="openTab(event, 'DatosGenerales')">Datos Generales</button>
+        <button class="tab-link" onclick="openTab(event, 'Facturas')">Facturas</button>
+        <button class="tab-link" onclick="openTab(event, 'Costeo')">Costeo</button>
+        <button class="tab-link" onclick="openTab(event, 'CosteoFactura')">Costeo Factura</button>
+        <button class="tab-link" onclick="openTab(event, 'ManoObra')">Mano de Obra</button>
+    </div>
+
+    <div id="DatosGenerales" class="tab-content" style="display: block;">
+        <form>
+            <h2>Datos Generales</h2>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+
+            <label for="codigoCatalogo">Código Catálogo:</label>
+            <input type="text" id="codigoCatalogo" name="codigoCatalogo" required>
+
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" name="descripcion" required>
+
+            <label for="proveedor">Proveedor:</label>
+            <input type="text" id="proveedor" name="proveedor" required>
+
+            <label for="folioFactura">Folio Factura:</label>
+            <input type="text" id="folioFactura" name="folioFactura" required>
+
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required>
+
+            <label for="unidad">Unidad:</label>
+            <input type="text" id="unidad" name="unidad" required>
+
+            <label for="valorFactura">Valor Factura:</label>
+            <input type="number" id="valorFactura" name="valorFactura" required>
+
+            <label for="porcion">Porción c/n:</label>
+            <input type="number" id="porcion" name="porcion" required>
+
+            <button type="submit">Guardar</button>
+        </form>
+    </div>
+
+    <div id="Facturas" class="tab-content">
+        <h2>Facturas</h2>
+        <form>
+            <label for="archivoFacturas">Subir archivo de facturas:</label>
+            <input type="file" id="archivoFacturas" name="archivoFacturas" accept=".txt" required>
+            <button type="submit">Subir</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Folio</th>
+                    <th>Fecha</th>
+                    <th>Moneda</th>
+                    <th>Rubro</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="Costeo" class="tab-content">
+        <h2>Costeo</h2>
+        <div class="button-group">
+            <button onclick="openMaterialsModal()">Materiales y Bienes usados</button>
+            <button onclick="openImportModal()">Importar Materiales</button>
+            <button onclick="downloadCostingFormat()">Formato de Costeo</button>
+        </div>
+        <form>
+            <label for="comentariosCosteo">Comentarios sobre el Costeo:</label>
+            <textarea id="comentariosCosteo" name="comentariosCosteo"></textarea>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Cantidad usada</th>
+                    <th>Costo unitario</th>
+                    <th>Total</th>
+                    <th>CN</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+            </tbody>
+        </table>
+        <div class="button-group">
+            <button>Cancelar</button>
+            <button>Guardar</button>
+        </div>
+    </div>
+
+    <div id="CosteoFactura" class="tab-content">
+        <h2>Costeo Factura</h2>
+        <button onclick="openMaterialsUsedModal()">Materiales y Bienes usados</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>Descripción</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th>Valor Unitario</th>
+                    <th>C. utilizada</th>
+                    <th>CN</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán las filas de la tabla dinámicamente -->
+            </tbody>
+        </table>
+        <div class="button-group">
+            <button>Cancelar</button>
+            <button>Guardar</button>
+        </div>
+    </div>
+
+    <div id="ManoObra" class="tab-content">
+        <h2>Mano de Obra</h2>
+        <!-- Aquí puedes agregar el contenido para la pestaña de Mano de Obra -->
+    </div>
+
+    <!-- Modal para Materiales y Bienes usados en Costeo -->
+    <div id="materialsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMaterialsModal()">&times;</span>
+            <h2>Materiales y Bienes usados</h2>
+            <form>
+                <label for="material">Material:</label>
+                <input type="text" id="material" name="material" required>
+
+                <label for="costoHoraUnidad">Costo hora/unidad:</label>
+                <input type="number" id="costoHoraUnidad" name="costoHoraUnidad" required>
+
+                <label for="horaUsoCantidad">Hora uso/cantidad:</label>
+                <input type="number" id="horaUsoCantidad" name="horaUsoCantidad" required>
+
+                <label for="valorFactura">Valor factura:</label>
+                <input type="number" id="valorFactura" name="valorFactura" required>
+
+                <label for="porcionCN">Porción CN:</label>
+                <input type="number" id="porcionCN" name="porcionCN" required>
+
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios"></textarea>
+
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Importar Materiales -->
+    <div id="importModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeImportModal()">&times;</span>
+            <h2>Importar Materiales</h2>
+            <form>
+                <label for="archivoImport">Subir archivo:</label>
+                <input type="file" id="archivoImport" name="archivoImport" required>
+                <button type="submit">Importar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para Materiales y Bienes usados en Costeo Factura -->
+    <div id="materialsUsedModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeMaterialsUsedModal()">&times;</span>
+            <h2>Materiales y Bienes usados</h2>
+            <form>
+                <label for="proveedor">Proveedor:</label>
+                <select id="proveedor" name="proveedor" required>
+                    <option value="">Seleccione un proveedor</option>
+                    <option value="Proveedor 1">Proveedor 1</option>
+                    <option value="Proveedor 2">Proveedor 2</option>
+                    <!-- Agregar más opciones según sea necesario -->
+                </select>
+                <div class="button-group">
+                    <div>
+                        <label for="inicio">Inicio:</label>
+                        <input type="date" id="inicio" name="inicio" required>
+                    </div>
+                    <div>
+                        <label for="fin">Fin:</label>
+                        <input type="date" id="fin" name="fin" required>
+                    </div>
+                </div>
+                <label for="folio">Folio:</label>
+                <input type="text" id="folio" name="folio" required><br><br>
+                <label for="search">Buscar:</label>
+                <input type="text" id="search" name="search">
+                <button type="button">Buscar</button>
+                <div class="button-group">
+                    <button type="button" onclick="closeMaterialsUsedModal()">Cancelar</button>
+                    <button type="submit">Seleccionar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            // Ocultar todos los contenidos de las pestañas
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Remover la clase "active" de todos los enlaces de pestañas
+            tablinks = document.getElementsByClassName("tab-link");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Mostrar el contenido de la pestaña actual y agregar la clase "active" al enlace de pestaña correspondiente
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function openMaterialsModal() {
+            document.getElementById('materialsModal').style.display = 'block';
+        }
+
+        function closeMaterialsModal() {
+            document.getElementById('materialsModal').style.display = 'none';
+        }
+
+        function openImportModal() {
+            document.getElementById('importModal').style.display = 'block';
+        }
+
+        function closeImportModal() {
+            document.getElementById('importModal').style.display = 'none';
+        }
+
+        function openMaterialsUsedModal() {
+            document.getElementById('materialsUsedModal').style.display = 'block';
+        }
+
+        function closeMaterialsUsedModal() {
+            document.getElementById('materialsUsedModal').style.display = 'none';
+        }
+
+        function downloadCostingFormat() {
+            // Aquí deberías implementar la lógica para descargar el archivo de Excel
+            alert("Descargar formato de costeo");
+        }
+
+        // Mostrar la primera pestaña por defecto
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector(".tab-content").style.display = "block";
+            document.querySelector(".tab-link").classList.add("active");
+        });
+
+    </script>
+    <script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+</body>
+
+  
+
+			
+	
+</html>
