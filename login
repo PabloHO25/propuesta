@@ -5,13 +5,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="img/ico.ico">
-
-
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
   <script>
 
@@ -116,7 +112,7 @@
   body {
     background: #008b37; 
     background: rgb(0, 174, 61);
-    background: linear-gradient(90deg, rgb(2, 64, 103 ) 0%, rgb(162, 207, 236 ) 50%);
+    background: linear-gradient(90deg, rgb(0, 84, 138 ) 0%, rgb() 50%);
     font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;      
@@ -125,31 +121,32 @@
 </style>
 </head>
 <body>
+
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="login.html">Sign up</a>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
         </li>
        
         <li class="nav-item">
-          <a class="nav-link" href="form.html">Registro</a>
-        </li>
-       
-        <li class="nav-item">
-                    <a class="nav-link" href="factura.html">Factura</a>
-
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
       </ul>
      
     </div>
   </div>
 </nav>
+
 
 	
 <div class="login-page">
